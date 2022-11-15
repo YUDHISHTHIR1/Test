@@ -1,0 +1,15 @@
+pipeline{
+
+    stage any
+
+    stage{
+
+        stage('git checkout'){
+
+            steps{
+                git 'https://github.com/YUDHISHTHIR1/Test.git'
+            }
+        }
+
+    }
+}
