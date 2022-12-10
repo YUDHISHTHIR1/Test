@@ -1,10 +1,18 @@
 pipeline{
     agent any
-    stages{
+    
+    environment{
+        PATH = "C:/Users/yuvpa/test:$PATH"
+        }
         stage("Git Checkout"){
             steps{
                 git credentialsId: 'github', url: 'https://github.com/YUDHISHTHIR1/Test.git'
             }
         }
+        staged("Maven Build"){
+        steps{
+        sh "mvn clean package"
     }
+}
+}
 }
